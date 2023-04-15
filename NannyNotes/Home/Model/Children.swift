@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Chidren {
+struct Children {
     let children = [ "Landon", "Alistair", "Jack"]
 }

@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     let headerLabel = HeaderLabel()
     let horiztonalLine = HorizontalLine()
+    let childTV = ChildrenTV()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +18,7 @@ class ViewController: UIViewController {
         print("hello")
         setupHeader()
         setupHorizontalLine()
+        setupTV()
     }
     
     func setupHeader() {
@@ -36,7 +38,15 @@ class ViewController: UIViewController {
         horiztonalLine.translatesAutoresizingMaskIntoConstraints = false
         horiztonalLine.topAnchor.constraint(equalTo: headerLabel.bottomAnchor).isActive = true
         horiztonalLine.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        
+    }
+    
+    func setupTV() {
+        view.addSubview(childTV)
+        childTV.translatesAutoresizingMaskIntoConstraints = false
+        childTV.topAnchor.constraint(equalTo: horiztonalLine.bottomAnchor, constant: 5).isActive = true
+        childTV.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
+        childTV.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        childTV.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10).isActive = true
     }
 }
 
