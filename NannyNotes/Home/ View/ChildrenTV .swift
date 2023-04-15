@@ -5,12 +5,12 @@
 //  Created by Suzie on 4/14/23.
 //
 
-import Foundation
 import UIKit
 
 class ChildrenTV: UIView {
     let tableView = UITableView()
-    let children = Children()
+    let childrenArray = ["Landon", "Alistair", "Jack"]
+//    let childrenArray: [Children] = []
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,8 +24,12 @@ class ChildrenTV: UIView {
     func setupTV() {
         addSubview(tableView)
         setTVDelegates()
-        tableView.rowHeight = 100
+        tableView.rowHeight = 50
+        tableView.clipsToBounds = true
+        tableView.layer.cornerRadius = 10.0
         //register cells
+        tableView.register(TableViewCell.self, forCellReuseIdentifier: "TableViewCell")
+        
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
@@ -41,11 +45,15 @@ class ChildrenTV: UIView {
 
 extension ChildrenTV: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        //how many cells to show
+        return childrenArray.count
     }
     
     //which cells would be shown
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
+        
         return UITableViewCell()
     }
 }

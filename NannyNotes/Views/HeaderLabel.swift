@@ -9,6 +9,7 @@ import UIKit
 
 class HeaderLabel: UILabel {
     let color = Color()
+    let fontStyle = Font()
     var label = UILabel()
     var labelTitle: String = ""
     
@@ -24,8 +25,8 @@ class HeaderLabel: UILabel {
     func setupLabel(title: String) {
         addSubview(label)
         label.backgroundColor = .white
-        label.font = UIFont(name: "AvenirNext-Bold", size: 20.0)
-        label.text = title
+        label.font = fontStyle.title
+        label.text = title.uppercased()
         label.textColor = color.darkGray
         label.translatesAutoresizingMaskIntoConstraints = false
         label.leftAnchor.constraint(equalTo: leftAnchor).isActive = true

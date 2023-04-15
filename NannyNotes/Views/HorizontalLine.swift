@@ -23,7 +23,6 @@ class HorizontalLine: UIView {
         backgroundColor = color.mediumGray
         translatesAutoresizingMaskIntoConstraints = false
         heightAnchor.constraint(equalToConstant: 1).isActive = true
-        widthAnchor.constraint(equalToConstant: 320).isActive = true
     }
 }
 
