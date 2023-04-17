@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     let headerLabel = HeaderLabel()
+    let childLabel = SubHeaderLabel()
     let line = HorizontalLine()
     let childTV = ChildrenTV()
     
@@ -18,6 +19,7 @@ class ViewController: UIViewController {
         title = "Home"
         setupHeader()
         setupLine()
+        setupChildSubHeader()
         setupTV()
     }
     
@@ -28,8 +30,8 @@ class ViewController: UIViewController {
         headerLabel.translatesAutoresizingMaskIntoConstraints = false
         headerLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 75).isActive = true
         headerLabel.heightAnchor.constraint(equalToConstant: 50 ).isActive = true
-        headerLabel.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        headerLabel.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        headerLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
+        headerLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10).isActive = true
     }
     
     func setupLine() {
@@ -40,11 +42,20 @@ class ViewController: UIViewController {
         line.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30).isActive = true
     }
     
+    func setupChildSubHeader() {
+        view.addSubview(childLabel)
+        childLabel.setupLabel(title: "CHILDREN")
+        childLabel.translatesAutoresizingMaskIntoConstraints = false
+        childLabel.topAnchor.constraint(equalTo: line.bottomAnchor, constant: 5).isActive = true
+        childLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
+        childLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10).isActive = true
+    }
+    
     func setupTV() {
         view.addSubview(childTV)
-        childTV.backgroundColor = .red//why doesn't this show
+        childTV.backgroundColor = .red
         childTV.translatesAutoresizingMaskIntoConstraints = false
-        childTV.topAnchor.constraint(equalTo: line.bottomAnchor, constant: 5).isActive = true
+        childTV.topAnchor.constraint(equalTo: childLabel.bottomAnchor, constant: 5).isActive = true
         childTV.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
 //        childTV.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         childTV.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10).isActive = true

@@ -1,4 +1,13 @@
 //
+//  SubHeader.swift
+//  NannyNotes
+//
+//  Created by Suzie on 4/17/23.
+//
+
+import UIKit
+
+//
 //  HeaderView.swift
 //  NannyNotes
 //
@@ -7,7 +16,7 @@
 
 import UIKit
 
-class HeaderLabel: UILabel {
+class SubHeaderLabel: UILabel {
     let container = UIView()
     let color = Color()
     let fontStyle = Font()
@@ -26,7 +35,7 @@ class HeaderLabel: UILabel {
     
     func setupContainer() {
         addSubview(container)
-        container.backgroundColor = color.purple
+        container.backgroundColor = color.pinkOne
         container.layer.cornerRadius = 15
         container.layer.shadowColor = UIColor.black.cgColor
         container.layer.shadowOpacity = 0.2
@@ -49,5 +58,6 @@ class HeaderLabel: UILabel {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.centerYAnchor.constraint(equalTo: container.centerYAnchor).isActive = true
         label.leftAnchor.constraint(equalTo: container.leftAnchor, constant: 20).isActive = true
+        label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true 
     }
 }
