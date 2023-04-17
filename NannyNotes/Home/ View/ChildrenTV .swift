@@ -54,6 +54,6 @@ extension ChildrenTV: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
         
-        return UITableViewCell()
+        return cell
     }
 }

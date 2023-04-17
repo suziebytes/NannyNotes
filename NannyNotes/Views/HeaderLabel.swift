@@ -8,6 +8,7 @@
 import UIKit
 
 class HeaderLabel: UILabel {
+    let container = UIView()
     let color = Color()
     let fontStyle = Font()
     var label = UILabel()
@@ -15,6 +16,7 @@ class HeaderLabel: UILabel {
     
     override init(frame: CGRect) {
         super .init(frame: frame)
+        setupContainer()
         setupLabel(title: labelTitle)
     }
     
@@ -22,14 +24,26 @@ class HeaderLabel: UILabel {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setupContainer() {
+        addSubview(container)
+        container.backgroundColor = color.purple
+        container.layer.cornerRadius = 15
+        container.translatesAutoresizingMaskIntoConstraints = false
+        container.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        container.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        container.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        container.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+    }
+    
     func setupLabel(title: String) {
-        addSubview(label)
-        label.backgroundColor = .white
+        container.addSubview(label)
+        label.backgroundColor = color.purple
         label.font = fontStyle.title
+        label.textColor = .white
         label.text = title.uppercased()
-        label.textColor = color.darkGray
+
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        label.rightAnchor.constraint(equalTo: rightAnchor).isActive = true 
+        label.centerYAnchor.constraint(equalTo: container.centerYAnchor).isActive = true
+        label.leftAnchor.constraint(equalTo: container.leftAnchor, constant: 20).isActive = true 
     }
 }

@@ -16,7 +16,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         title = "Home"
-        print("hello")
         setupHeader()
         setupLine()
         setupTV()
@@ -29,14 +28,14 @@ class ViewController: UIViewController {
         headerLabel.translatesAutoresizingMaskIntoConstraints = false
         headerLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 75).isActive = true
         headerLabel.heightAnchor.constraint(equalToConstant: 50 ).isActive = true
-        headerLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30).isActive = true
+        headerLabel.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         headerLabel.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
     }
     
     func setupLine() {
         view.addSubview(line)
         line.translatesAutoresizingMaskIntoConstraints = false
-        line.topAnchor.constraint(equalTo: headerLabel.bottomAnchor).isActive = true
+        line.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 5).isActive = true
         line.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30).isActive = true
         line.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30).isActive = true
     }
