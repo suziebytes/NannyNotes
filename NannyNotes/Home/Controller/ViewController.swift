@@ -31,7 +31,6 @@ class ViewController: UIViewController {
         
         headerLabel.translatesAutoresizingMaskIntoConstraints = false
         headerLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 75).isActive = true
-        headerLabel.heightAnchor.constraint(equalToConstant: 50 ).isActive = true
         headerLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
         headerLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10).isActive = true
     }
@@ -46,7 +45,6 @@ class ViewController: UIViewController {
     
     func setupChildSubHeader() {
         view.addSubview(childLabel)
-        
         childLabel.setupLabel(title: "CHILDREN")
         childLabel.isUserInteractionEnabled = true
         childLabel.translatesAutoresizingMaskIntoConstraints = false

@@ -45,6 +45,7 @@ class SubHeaderLabel: UILabel {
         container.translatesAutoresizingMaskIntoConstraints = false
         container.topAnchor.constraint(equalTo: topAnchor).isActive = true
         container.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        container.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         container.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         container.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
     }

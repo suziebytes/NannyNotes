@@ -38,6 +38,7 @@ class HeaderLabel: UILabel {
         container.heightAnchor.constraint(equalToConstant: 75).isActive = true
         container.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         container.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        container.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
     
     func setupLabel(title: String) {
