@@ -35,9 +35,9 @@ class HeaderLabel: UILabel {
         
         container.translatesAutoresizingMaskIntoConstraints = false
         container.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        container.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        container.leftAnchor.constraint(equalTo: leftAnchor, constant: 5).isActive = true
-        container.rightAnchor.constraint(equalTo: rightAnchor, constant: -5).isActive = true
+        container.heightAnchor.constraint(equalToConstant: 75).isActive = true
+        container.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        container.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
     }
     
     func setupLabel(title: String) {

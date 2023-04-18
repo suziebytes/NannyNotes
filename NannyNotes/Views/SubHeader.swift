@@ -45,8 +45,8 @@ class SubHeaderLabel: UILabel {
         container.translatesAutoresizingMaskIntoConstraints = false
         container.topAnchor.constraint(equalTo: topAnchor).isActive = true
         container.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        container.leftAnchor.constraint(equalTo: leftAnchor, constant: 5).isActive = true
-        container.rightAnchor.constraint(equalTo: rightAnchor, constant: -5).isActive = true
+        container.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        container.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
     }
     
     func setupLabel(title: String) {
@@ -58,6 +58,6 @@ class SubHeaderLabel: UILabel {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.centerYAnchor.constraint(equalTo: container.centerYAnchor).isActive = true
         label.leftAnchor.constraint(equalTo: container.leftAnchor, constant: 20).isActive = true
-        label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true 
+        label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
     }
 }
